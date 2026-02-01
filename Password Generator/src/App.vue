@@ -29,6 +29,7 @@ const generatePassword = () => {
 <template>
   <div class="password-generator-container">
     <h1 class="password-generator-title">Password Generator</h1>
+
     <label for="length">Password Length: </label>
     <input
       type="number"
@@ -39,17 +40,22 @@ const generatePassword = () => {
       max="32"
     />
     <br />
+
     <label for="includeUppercase">Include Uppercase</label>
     <input type="checkbox" id="includeUppercase" v-model="includeUppercase" />
     <br />
+
     <label for="includeNumbers">Include Numbers</label>
     <input type="checkbox" id="includeNumbers" v-model="includeNumbers" />
     <br />
+
     <label for="includeSymbols">Include Symbols</label>
     <input type="checkbox" id="includeSymbols" v-model="includeSymbols" />
     <br />
+
     <button @click="generatePassword" class="generate-button">Generate Password</button>
     <br />
+
     <div v-if="generatedPassword" class="generated-password">
       <strong>Your Password: </strong> {{ generatedPassword }}
     </div>
@@ -82,6 +88,7 @@ input {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .generate-button:hover {
